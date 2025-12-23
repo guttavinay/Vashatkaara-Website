@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 
 const STATS = [
@@ -107,10 +106,6 @@ const About: React.FC = () => {
         className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-indigo-600/5 rounded-full blur-[120px] -z-10 transition-transform duration-75 ease-out"
         style={{ transform: `translateY(${parallaxBg}px)` }}
       />
-      <div 
-        className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px] -z-10 transition-transform duration-75 ease-out"
-        style={{ transform: `translateY(${-parallaxBg * 0.5}px)` }}
-      />
       
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-32">
@@ -121,32 +116,16 @@ const About: React.FC = () => {
               className="relative transition-transform duration-500 ease-out will-change-transform aspect-[5/4] overflow-hidden rounded-[2.5rem]"
               style={{ transform: `translateY(${parallaxMain}px)` }}
             >
+              {/* Optimized Image with WebP and width params */}
               <img 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000&h=800" 
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fm=webp&fit=crop&q=80&w=800" 
                 alt="Vashatkaara Innovation Lab" 
-                width="1000"
-                height="800"
+                width="800"
+                height="640"
                 loading="lazy"
                 decoding="async"
                 className="rounded-[2.5rem] shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-1000 border border-slate-700/50 object-cover w-full h-full"
               />
-              
-              <div 
-                className="absolute -bottom-10 -right-10 hidden md:block transition-transform duration-300 ease-out"
-                style={{ transform: `translateY(${-parallaxMain * 0.4}px)` }}
-              >
-                <div className="glass-card p-8 rounded-3xl border-indigo-500/30 shadow-2xl hover:scale-105 transition-transform duration-300">
-                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Our Mission</p>
-                  <p className="text-xl font-bold text-white max-w-[200px] leading-tight">
-                    Bridging the gap between <span className="text-indigo-400">Ambition</span> and <span className="text-sky-400">Execution</span>.
-                  </p>
-                  <div className="mt-4 flex gap-1">
-                    <div className="w-1 h-1 rounded-full bg-indigo-500 animate-pulse" />
-                    <div className="w-1 h-1 rounded-full bg-indigo-500 animate-pulse delay-100" />
-                    <div className="w-1 h-1 rounded-full bg-indigo-500 animate-pulse delay-200" />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -171,43 +150,6 @@ const About: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-
-        <div className="relative">
-          <div 
-            ref={pillarsRef}
-            className={`text-center mb-16 transform transition-all duration-1000 ease-out ${
-              isPillarsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-            }`}
-          >
-            <h3 className="text-2xl md:text-4xl font-bold mb-4">The Pillars of <span className="text-indigo-500">Vashatkaara</span></h3>
-            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-sky-500 mx-auto rounded-full" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {VALUES.map((value, i) => (
-              <div 
-                key={i} 
-                className="glass-card p-10 rounded-[2.5rem] border-slate-800/50 hover:bg-slate-800/60 transition-all duration-500 group hover:-translate-y-4 hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.3)] perspective-1000"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[2.5rem]" />
-                
-                <div className="w-14 h-14 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-400 mb-8 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500 group-hover:rotate-[360deg] group-hover:scale-110 shadow-lg shadow-indigo-500/10">
-                  {value.icon}
-                </div>
-                
-                <h4 className="text-xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors">
-                  {value.title}
-                </h4>
-                
-                <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200 transition-colors relative z-10">
-                  {value.description}
-                </p>
-
-                <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-slate-800 group-hover:bg-indigo-500 transition-colors" />
-              </div>
-            ))}
           </div>
         </div>
       </div>

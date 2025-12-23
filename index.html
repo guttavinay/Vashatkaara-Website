@@ -3,45 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vashatkaara - High-performance software engineering firm specializing in CMS, AI integrations, and intelligent solutions.">
     <title>Vashatkaara | Engineering the Future</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Resource Prioritization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://esm.sh">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
     <style>
         html {
             scroll-snap-type: y proximity;
-            scroll-padding-top: 80px; /* Accounts for fixed header height */
+            scroll-padding-top: 80px;
         }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0f172a;
             color: #f8fafc;
+            /* Prevents layout shift during font load */
+            font-display: swap; 
         }
+
+        /* Performance Optimization: Content Visibility */
+        section {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 500px;
+        }
+        #home { content-visibility: visible; }
+
         .glass-card {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             position: relative;
             overflow: hidden;
-        }
-        .glass-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                120deg,
-                transparent,
-                rgba(255, 255, 255, 0.05),
-                transparent
-            );
-            transition: 0.7s;
-        }
-        .glass-card:hover::before {
-            left: 100%;
         }
         .gradient-text {
             background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
@@ -50,114 +48,41 @@
             -webkit-text-fill-color: transparent;
         }
         
-        @keyframes shimmer {
-            to {
-                background-position: 200% center;
-            }
-        }
-        .animate-shimmer {
-            animation: shimmer 3s linear infinite;
-        }
+        @keyframes shimmer { to { background-position: 200% center; } }
+        .animate-shimmer { animation: shimmer 3s linear infinite; }
 
         @keyframes logo-breathe {
             0%, 100% { transform: scale(1); opacity: 0.8; }
             50% { transform: scale(1.05); opacity: 1; }
         }
-        .animate-logo-breathe {
-            animation: logo-breathe 4s ease-in-out infinite;
-        }
+        .animate-logo-breathe { animation: logo-breathe 4s ease-in-out infinite; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0); }
             50% { transform: translateY(-8px) rotate(2deg); }
         }
-        .animate-float {
-            animation: float 4s ease-in-out infinite;
-        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fade-in-up {
-            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
+        .animate-fade-in-up { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
-        /* Modal Specific Animations */
-        @keyframes modalZoomIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.9) translateY(40px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-        .animate-modal-zoom-in {
-            animation: modalZoomIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes modalZoomOut {
-            0% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(0.95) translateY(20px);
-            }
-        }
-        .animate-modal-zoom-out {
-            animation: modalZoomOut 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.4s ease-out forwards;
-        }
-
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
-        }
-        .animate-fade-out {
-            animation: fadeOut 0.3s ease-out forwards;
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
 
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(calc(-350px * 5 - 2rem * 5)); }
         }
-        
         .animate-scroll {
             display: flex;
             width: max-content;
             animation: scroll 60s linear infinite;
         }
-        
-        .animate-scroll:hover {
-            animation-play-state: paused;
-        }
-
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        
-        /* Perspective helper for 3D transforms */
-        .perspective-1000 {
-            perspective: 1000px;
-        }
     </style>
+
 <script type="importmap">
 {
   "imports": {
@@ -171,9 +96,9 @@
 </head>
 <body>
     <div id="root">
-        <div style="height: 100vh; display: flex; align-items: center; justify-center; background: #0f172a; color: #38bdf8; font-family: sans-serif; flex-direction: column; justify-content: center;">
+        <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: #0f172a; color: #38bdf8; font-family: sans-serif; flex-direction: column;">
             <div style="width: 40px; height: 40px; border: 3px solid #1e293b; border-top-color: #38bdf8; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-            <p style="margin-top: 20px; font-weight: 600; letter-spacing: 0.1em; font-size: 12px; text-transform: uppercase;">Loading Vashatkaara Experience</p>
+            <p style="margin-top: 20px; font-weight: 600; letter-spacing: 0.1em; font-size: 12px; text-transform: uppercase;">Initializing Vashatkaara</p>
         </div>
         <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
     </div>
