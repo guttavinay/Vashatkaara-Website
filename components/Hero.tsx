@@ -20,10 +20,14 @@ const Hero: React.FC = () => {
           Innovating with <span className="gradient-text">Vashatkaara</span> <br className="hidden md:block" /> Intelligence.
         </h1>
         
-        <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-10 leading-relaxed">
-          Vashatkaara empowers global enterprises with custom AI integrations, 
-          intelligent document systems, and elite engineering outsourcing.
-        </p>
+        <div className="max-w-3xl mx-auto text-lg md:text-xl text-slate-400 mb-10 leading-relaxed space-y-6">
+          <p>
+            At Vashatkaara, we specialize in delivering innovative software solutions tailored to meet the unique needs of your business. Whether you're looking to enhance existing processes with custom-built software or need end-to-end product development, we offer a comprehensive suite of services that turn your ideas into reality.
+          </p>
+          <p>
+            Our team combines cutting-edge technology with industry expertise to build products that are scalable, secure, and designed for success. From initial concept to final deployment, we are your trusted partner in navigating the complexities of the digital landscape. Let's build something extraordinary together!
+          </p>
+        </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="#services" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-100 transition-all hover:scale-105">
