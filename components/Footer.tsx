@@ -83,9 +83,9 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-500 hover:text-white hover:border-indigo-500/50 hover:bg-indigo-500/10 transition-all duration-300 group"
+                  className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-500 hover:text-white hover:border-indigo-400 hover:bg-indigo-600 hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] transition-all duration-500 group"
                 >
-                  <div className="group-hover:scale-110 transition-transform">
+                  <div className="group-hover:scale-125 transition-all duration-500">
                     {social.icon}
                   </div>
                 </a>

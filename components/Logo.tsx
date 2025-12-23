@@ -10,9 +10,9 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className = '', showText = true, showTagline = false, size = 'md' }) => {
   const sizes = {
-    sm: { icon: 'w-10 h-10', text: 'text-lg', tag: 'text-[6px]' },
-    md: { icon: 'w-14 h-14', text: 'text-2xl', tag: 'text-[8px]' },
-    lg: { icon: 'w-24 h-24', text: 'text-4xl', tag: 'text-[10px]' },
+    sm: { icon: 'w-10 h-10', text: 'text-lg', tag: 'text-[7px]' },
+    md: { icon: 'w-14 h-14', text: 'text-2xl', tag: 'text-[10px]' },
+    lg: { icon: 'w-24 h-24', text: 'text-4xl', tag: 'text-[13px]' },
   };
 
   const currentSize = sizes[size];
@@ -62,8 +62,8 @@ const Logo: React.FC<LogoProps> = ({ className = '', showText = true, showTaglin
             Vashatkaara
           </span>
           {showTagline && (
-            <div className="overflow-hidden">
-              <span className={`${currentSize.tag} font-bold tracking-[0.4em] uppercase gradient-text mt-1.5 whitespace-nowrap block group-hover:translate-x-1 transition-transform duration-700 opacity-90`}>
+            <div className="overflow-visible mt-1.5">
+              <span className={`${currentSize.tag} font-extrabold tracking-[0.3em] uppercase gradient-text whitespace-nowrap block group-hover:translate-x-1 transition-transform duration-700 opacity-100 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]`}>
                 TECHNOLOGY DRIVEN WITH PASSION
               </span>
             </div>

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 
 const STATS = [
@@ -117,12 +118,16 @@ const About: React.FC = () => {
             <div className="absolute -inset-4 bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
             
             <div 
-              className="relative transition-transform duration-500 ease-out will-change-transform"
+              className="relative transition-transform duration-500 ease-out will-change-transform aspect-[5/4] overflow-hidden rounded-[2.5rem]"
               style={{ transform: `translateY(${parallaxMain}px)` }}
             >
               <img 
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000&h=800" 
                 alt="Vashatkaara Innovation Lab" 
+                width="1000"
+                height="800"
+                loading="lazy"
+                decoding="async"
                 className="rounded-[2.5rem] shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-1000 border border-slate-700/50 object-cover w-full h-full"
               />
               

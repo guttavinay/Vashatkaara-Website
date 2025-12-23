@@ -1,9 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header.tsx';
 import Hero from './components/Hero.tsx';
 import About from './components/About.tsx';
 import ServiceList from './components/ServiceList.tsx';
-import AIStrategist from './components/AIStrategist.tsx';
 import ContactSection from './components/ContactSection.tsx';
 import Footer from './components/Footer.tsx';
 import BackToTop from './components/BackToTop.tsx';
@@ -28,6 +28,8 @@ const TESTIMONIALS = [
     company: "RetailFlow"
   }
 ];
+
+const TRUSTED_BRANDS = ['Microsoft', 'Stripe', 'Airbnb', 'GitHub', 'Linear'];
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -55,6 +57,20 @@ function App() {
         <About />
 
         <ServiceList />
+
+        {/* Brand Trust Section */}
+        <section className="py-12 bg-slate-900/10 border-y border-slate-800/30">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <p className="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-8">Trusted by industry leaders</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-30 grayscale hover:grayscale-0 hover:opacity-60 transition-all duration-700">
+              {TRUSTED_BRANDS.map(name => (
+                <span key={name} className="text-2xl md:text-3xl font-bold italic text-slate-300 transition-colors hover:text-white cursor-default">
+                  {name}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Testimonials Section with Carousel */}
         <section className="py-24 relative overflow-hidden bg-slate-900/30 snap-start">
@@ -135,8 +151,6 @@ function App() {
             </div>
           </div>
         </section>
-
-        <AIStrategist />
 
         <ContactSection />
       </main>

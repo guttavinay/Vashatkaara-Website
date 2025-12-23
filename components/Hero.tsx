@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Hero: React.FC = () => {
@@ -12,7 +13,7 @@ const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/50 border border-slate-700 mb-8 animate-fade-in">
           <span className="flex h-2 w-2 rounded-full bg-sky-500 animate-pulse" />
-          <span className="text-xs font-bold gradient-text uppercase tracking-[0.2em]">TECHNOLOGY DRIVEN WITH PASSION</span>
+          <span className="text-xs font-bold gradient-text uppercase tracking-[0.2em]">INTELLIGENCE • INNOVATION • EXCELLENCE</span>
         </div>
         
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.1]">
@@ -21,28 +22,19 @@ const Hero: React.FC = () => {
         
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-10 leading-relaxed">
           Vashatkaara empowers global enterprises with custom AI integrations, 
-          robust content architectures, and elite engineering outsourcing.
+          intelligent document systems, and elite engineering outsourcing.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="#services" className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-slate-100 transition-all hover:scale-105">
             View Our Services
           </a>
-          <a href="#ai-strategist" className="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white font-bold rounded-xl border border-slate-700 hover:bg-slate-700 transition-all flex items-center justify-center gap-2 group">
-            AI Strategy Planner
+          <a href="#contact" className="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white font-bold rounded-xl border border-slate-700 hover:bg-slate-700 transition-all flex items-center justify-center gap-2 group">
+            Start a Project
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
-        </div>
-
-        <div className="mt-20 pt-10 border-t border-slate-800/50">
-          <p className="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-8">Trusted by industry leaders</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-            {['Microsoft', 'Stripe', 'Airbnb', 'GitHub', 'Linear'].map(name => (
-              <span key={name} className="text-2xl font-bold italic">{name}</span>
-            ))}
-          </div>
         </div>
       </div>
     </section>
