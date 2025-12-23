@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { SERVICES } from '../constants';
-import { Service } from '../types';
+import { SERVICES } from '../constants.tsx';
+import { Service } from '../types.ts';
 
 const ServiceList: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
